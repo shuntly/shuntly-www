@@ -1,10 +1,23 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import SurveillanceTicker from "@/components/SurveillanceTicker";
+import ProblemSection from "@/components/ProblemSection";
+import HowItWorks from "@/components/HowItWorks";
+import FeaturesSection from "@/components/FeaturesSection";
+import Testimonials from "@/components/Testimonials";
+import InstallSection from "@/components/InstallSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-      </main>
-    </div>
+    <>
+      <Hero />
+      {/* <SurveillanceTicker /> */}
+      <ProblemSection />
+      <HowItWorks />
+      <FeaturesSection />
+      <Testimonials />
+      <InstallSection />
+      <Footer />
+    </>
   );
 }

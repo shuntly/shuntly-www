@@ -1,0 +1,38 @@
+export default function Footer() {
+  return (
+    <footer className="py-12 px-8 bg-dark text-tan text-center font-special-elite">
+      <div className="font-righteous text-2xl text-mustard mb-2">SHUNTLY</div>
+      <p>A lightweight wiretap for your LLM traffic.</p>
+      <div className="flex justify-center gap-8 my-6 flex-wrap">
+        <a
+          href="https://github.com/shuntly"
+          className="text-tan no-underline font-terminal text-[0.95rem] tracking-[0.1em] transition-colors hover:text-mustard"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://pypi.org/project/shuntly/"
+          className="text-tan no-underline font-terminal text-[0.95rem] tracking-[0.1em] transition-colors hover:text-mustard"
+        >
+          PyPI
+        </a>
+        <a
+          href="https://www.npmjs.com/package/shuntly"
+          className="text-tan no-underline font-terminal text-[0.95rem] tracking-[0.1em] transition-colors hover:text-mustard"
+        >
+          npm
+        </a>
+        <a
+          href="https://shuntly.dev"
+          className="text-tan no-underline font-terminal text-[0.95rem] tracking-[0.1em] transition-colors hover:text-mustard"
+        >
+          Docs
+        </a>
+      </div>
+      <p className="text-[0.75rem] opacity-50 mt-6 max-w-[500px] mx-auto leading-relaxed">
+        No agents were harmed in the making of this website. Several were,
+        however, deeply inconvenienced.
+      </p>
+    </footer>
+  );
+}
