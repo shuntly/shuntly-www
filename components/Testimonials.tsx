@@ -2,7 +2,7 @@ import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
   return (
-    <section className="py-20 px-8 bg-[linear-gradient(135deg,var(--color-cream)_0%,#F0DEB4_50%,var(--color-cream)_100%)]">
+    <section className="py-10 px-8 bg-[linear-gradient(135deg,var(--color-cream)_0%,#F0DEB4_50%,var(--color-cream)_100%)]">
       <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-rust mb-3 text-center">
         Field Reports
       </p>
