@@ -30,8 +30,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-[0.75rem] opacity-50 mt-6 max-w-[500px] mx-auto leading-relaxed">
-        No agents were harmed in the making of this website. Several were,
-        however, deeply inconvenienced.
+        No agents were harmed in the making of this website. Several were deeply inconvenienced.
       </p>
     </footer>
   );
