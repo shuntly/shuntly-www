@@ -9,7 +9,7 @@ export const features = [
     icon: "\uD83D\uDD0C",
     title: "Pluggable Sinks",
     description:
-      "Stream captured traffic to files, named pipes, stdout, or your own custom sink. Your data, your way.",
+      "Stream captured traffic to files, named pipes, stdout, or your own custom sink.",
   },
   {
     icon: "\uD83C\uDFAD",
@@ -27,12 +27,12 @@ export const features = [
     icon: "\uD83D\uDC0D\uD83D\uDCD8",
     title: "Python & TypeScript",
     description:
-      "First-class support for both ecosystems. Same API design, same philosophy, two languages.",
+      "First-class support for both ecosystems. Same API design.",
   },
   {
     icon: "\uD83E\uDDF1",
     title: "Unopinionated",
     description:
-      "No dashboards. No accounts. No vendor lock-in. Just clean, structured data you can process however you want.",
+      "No dashboards. No accounts. No vendor lock-in. Just structured data you can process however you want.",
   },
 ];
