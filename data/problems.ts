@@ -9,12 +9,12 @@ export const problems = [
     number: "02",
     title: "Debugging Nightmares",
     description:
-      "When your agent goes off the rails, good luck figuring out what happened. Was it the prompt? The response? A hallucination? You\u2019ll never know without the receipts.",
+      "What happens When your agent goes off the rails? Was it the prompt? The response? A hallucination? You\u2019ll never know without the logs.",
   },
   {
     number: "03",
     title: "Overkill Observability",
     description:
-      "Full observability platforms are heavyweight, opinionated, and require you to restructure your code. You just want to see the traffic. That\u2019s it.",
+      "Full observability platforms are heavyweight, opinionated, and require you to restructure your code. You just want to see the traffic.",
   },
 ];
