@@ -29,14 +29,14 @@ function InstallCmd({ label, command }: { label: string; command: string }) {
 
 export default function InstallSection() {
   return (
-    <section id="install" className="py-10 px-8 bg-brown text-cream text-center">
-      <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-mustard mb-2">
+    <section id="install" className="how-grid-lines relative py-10 px-8 bg-brown text-cream text-center overflow-hidden">
+      <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-mustard mb-2 relative z-[1]">
         Get Started
       </p>
-      <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-cream mb-8">
+      <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-cream mb-8 relative z-[1]">
         Begin the Investigation
       </h2>
-      <div className="flex flex-col gap-4 max-w-[500px] mx-auto">
+      <div className="flex flex-col gap-4 max-w-[500px] mx-auto relative z-[1]">
         <InstallCmd label="PYTHON" command="pip install shuntly" />
         <InstallCmd label="TYPESCRIPT" command="npm install shuntly" />
       </div>

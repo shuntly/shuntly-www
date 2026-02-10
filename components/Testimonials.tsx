@@ -14,13 +14,13 @@ export default function Testimonials() {
 
   return (
     <section className="py-10 px-8 bg-[linear-gradient(135deg,var(--color-cream)_0%,#F0DEB4_50%,var(--color-cream)_100%)]">
-      <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-rust mb-3 text-center">
+      <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-rust mb-2 text-center">
         Field Reports
       </p>
       <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-brown mb-2 text-center">
         Agents Speak Out
       </h2>
-      <p className="font-terminal text-[0.85rem] tracking-[0.15em] text-rust text-center mb-12">
+      <p className="font-terminal text-[0.85rem] text-rust text-center">
         * The following testimonials were obtained under duress
       </p>
 
@@ -28,7 +28,7 @@ export default function Testimonials() {
         {shuffled.map((t) => (
           <div
             key={t.name}
-            className="testimonial-card relative bg-cream border-2 border-brown p-8 min-w-[340px] max-w-[340px] shrink-0 snap-start"
+            className="testimonial-card relative bg-cream border-2 border-brown pt-8 pb-4 px-4 min-w-[340px] max-w-[340px] shrink-0 snap-start"
             style={{ "--rot": `${t.rotation}deg` } as React.CSSProperties}
           >
             {t.stamp && (
@@ -36,7 +36,7 @@ export default function Testimonials() {
                 {t.stamp}
               </div>
             )}
-            <p className="italic text-base leading-relaxed mb-5 relative z-[1]">
+            <p className="italic text-base mb-4 relative z-[1]">
               &ldquo;{t.quote}&rdquo;
             </p>
             <div className="flex items-center gap-3">

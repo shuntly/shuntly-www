@@ -10,7 +10,7 @@ export default function HowItWorks() {
       id="how"
       className="how-grid-lines relative py-10 px-8 bg-brown text-cream overflow-hidden"
     >
-      <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-mustard mb-3 text-center relative z-[1]">
+      <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-mustard mb-2 text-center relative z-[1]">
         How It Works
       </p>
       <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-cream mb-8 text-center relative z-[1]">
@@ -20,7 +20,7 @@ export default function HowItWorks() {
       <div className="flex justify-center max-w-[700px] mx-auto relative z-[1]">
         <button
           onClick={() => setActiveTab("python")}
-          className={`code-tab-responsive font-terminal text-[1.1rem] tracking-[0.1em] py-[0.6em] px-8 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
+          className={`code-tab-responsive font-terminal text-[1.1rem] tracking-[0.1em] py-2 px-8 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
             activeTab === "python"
               ? "bg-mustard text-brown"
               : "bg-transparent text-mustard hover:bg-mustard/15"
@@ -30,7 +30,7 @@ export default function HowItWorks() {
         </button>
         <button
           onClick={() => setActiveTab("typescript")}
-          className={`code-tab-responsive font-terminal text-[1.1rem] tracking-[0.1em] py-[0.6em] px-8 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
+          className={`code-tab-responsive font-terminal text-[1.1rem] tracking-[0.1em] py-2 px-8 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
             activeTab === "typescript"
               ? "bg-mustard text-brown"
               : "bg-transparent text-mustard hover:bg-mustard/15"
@@ -57,8 +57,6 @@ export default function HowItWorks() {
             <span className="syn-keyword">import</span>{" "}
             <span className="syn-func">shunt</span>
             {"\n"}
-            <span className="syn-keyword">from</span> anthropic{" "}
-            <span className="syn-keyword">import</span> Anthropic{"\n"}
             client = <span className="syn-func">shunt</span>(Anthropic()){"\n"}
             {"\n"}
             <span className="syn-comment">
@@ -93,12 +91,7 @@ export default function HowItWorks() {
             <span className="syn-func">shunt</span>
             {" }"} <span className="syn-keyword">from</span>{" "}
             <span className="syn-string">&apos;shuntly&apos;</span>;{"\n"}
-            <span className="syn-keyword">import</span> Anthropic{" "}
-            <span className="syn-keyword">from</span>{" "}
-            <span className="syn-string">
-              &apos;@anthropic-ai/sdk&apos;
-            </span>
-            ;{"\n"}
+
             <span className="syn-keyword">const</span> client ={" "}
             <span className="syn-func">shunt</span>(
             <span className="syn-keyword">new</span>{" "}

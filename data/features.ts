@@ -3,7 +3,7 @@ export const features = [
     icon: "\uD83E\uDEB6",
     title: "Featherweight",
     description:
-      "Zero heavy dependencies. Minimal overhead. Your agent won\u2019t even notice it\u2019s being watched.",
+      "Zero dependencies. Minimal overhead. Your agent will not even notice it is being watched.",
   },
   {
     icon: "\uD83D\uDD0C",
@@ -15,13 +15,13 @@ export const features = [
     icon: "\uD83C\uDFAD",
     title: "Transparent Proxy",
     description:
-      "Wraps your existing client. Type hints preserved. Autocomplete works. Your code doesn\u2019t change.",
+      "Wraps your existing client. Type hints preserved. Autocomplete works. Your code does not change.",
   },
   {
     icon: "\uD83D\uDCE1",
     title: "Real-Time Streaming",
     description:
-      "Watch traffic flow in real time via named pipes. Pipe to jq, bat, fx, or any tool you like.",
+      "Watch traffic flow in real time via named pipes. Pipe to jq, fx, or any tool you like.",
   },
   {
     icon: "\uD83D\uDC0D\uD83D\uDCD8",

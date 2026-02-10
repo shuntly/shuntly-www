@@ -14,7 +14,7 @@ export default function Hero() {
         <br />
         Use{" "}
         <span className="inline-block bg-gradient-to-br from-burnt-orange to-mustard bg-clip-text text-transparent">
-          Shuntly
+          SHUNTLY
         </span>
       </h1>
 
@@ -40,9 +40,9 @@ export default function Hero() {
       <div className="cta-row-responsive animate-fade-slide-down [animation-delay:0.6s] flex gap-4 mt-6 flex-wrap justify-center relative z-[1]">
         <a
           href="#how"
-          className="cta-btn relative font-terminal text-[1.2rem] tracking-[0.08em] py-2 px-4 border-[3px] border-brown bg-transparent text-brown no-underline cursor-pointer transition-all hover:bg-mustard hover:border-mustard hover:-translate-x-0.5 hover:-translate-y-0.5"
+          className="cta-btn relative font-terminal text-[0.9rem] tracking-[0.08em] py-2 px-4  border-brown bg-transparent text-brown no-underline cursor-pointer transition-all hover:bg-mustard hover:border-mustard hover:-translate-x-0.5 hover:-translate-y-0.5"
         >
-          See How It Works →
+          See How It Works
         </a>
       </div>
     </section>
