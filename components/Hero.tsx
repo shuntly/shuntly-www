@@ -1,5 +1,6 @@
 import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "./TestimonialCard";
+import Logo from "./Logo";
 
 export default function Hero() {
   const featured = testimonials[Math.floor(Math.random() * testimonials.length)];

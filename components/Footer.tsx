@@ -1,6 +1,11 @@
+import Logo from "./Logo";
+
 export default function Footer() {
   return (
     <footer className="py-12 px-8 bg-dark text-tan text-center font-special-elite">
+      <div className="flex justify-center">
+        <Logo color="var(--color-mustard)" size={30} />
+      </div>
       <div className="font-righteous text-2xl text-mustard mb-2">SHUNTLY</div>
       <p>A lightweight wiretap for your LLM traffic.</p>
       <div className="flex justify-center gap-8 my-6 flex-wrap">
