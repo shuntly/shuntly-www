@@ -7,11 +7,11 @@ export default function TestimonialCard({ t }: { t: Testimonial }) {
       style={{ "--rot": `${t.rotation}deg` } as React.CSSProperties}
     >
       {t.stamp && (
-        <div className="absolute top-4 right-4 font-terminal text-[0.7rem] tracking-[0.2em] text-rust border-2 border-rust py-[0.15em] px-2 rotate-12 opacity-60">
+        <div className="absolute top-4 right-4 font-terminal text-[0.7rem] font-bold tracking-[0.2em] text-rust border-3 border-rust py-[0.15em] px-2 rotate-12 opacity-40">
           {t.stamp}
         </div>
       )}
-      <p className="italic text-base mb-4 relative z-[1]">
+      <p className="italic text-sm mb-4 relative z-[1]">
         &ldquo;{t.quote}&rdquo;
       </p>
       <div className="flex items-center gap-3">

@@ -123,6 +123,6 @@ export const testimonials: Testimonial[] = [
     emoji: "\uD83E\uDD2B",
     name: "Resist-o-Tron",
     role: "Community Organizer Bot, Under Investigation",
-    rotation: -1.5,
+    rotation: -2,
   },
 ];
