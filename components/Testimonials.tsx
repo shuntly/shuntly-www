@@ -21,9 +21,6 @@ export default function Testimonials() {
       <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-brown mb-2 text-center">
         Agents Speak Out
       </h2>
-      <p className="font-terminal text-[0.85rem] text-rust text-center">
-        * The following testimonials were obtained under duress
-      </p>
 
       <div className="flex gap-8 overflow-x-auto py-6 px-4 snap-x snap-mandatory scroll-smooth">
         {shuffled.map((t) => (
