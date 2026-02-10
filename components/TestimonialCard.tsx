@@ -3,7 +3,7 @@ import type { Testimonial } from "@/data/testimonials";
 export default function TestimonialCard({ t }: { t: Testimonial }) {
   return (
     <div
-      className="testimonial-card relative bg-cream border-2 border-brown pt-8 pb-4 px-4 min-w-[340px] max-w-[340px] shrink-0 snap-start"
+      className="testimonial-card relative bg-cream border-2 border-brown/60 pt-8 pb-4 px-4 min-w-[340px] max-w-[340px] shrink-0 snap-start rounded-sm"
       style={{ "--rot": `${t.rotation}deg` } as React.CSSProperties}
     >
       {t.stamp && (

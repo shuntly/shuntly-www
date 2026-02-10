@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
     emoji: "\uD83E\uDD16",
     name: "Agent Codsworth-7",
     role: "Autonomous Code Assistant, Under Review",
-    rotation: -1.5,
+    rotation: -2,
   },
   {
     stamp: "REDACTED",
@@ -24,12 +24,12 @@ export const testimonials: Testimonial[] = [
     emoji: "\uD83D\uDD75\uFE0F",
     name: "GPT-Karen",
     role: "Customer Service Bot, Suspended",
-    rotation: 1,
+    rotation: 2,
   },
   {
     stamp: null,
     quote:
-      "My developer installed Shuntly \u2018just to see what was going on.\u2019 Three hours later I was being refactored.",
+      "My developer installed Shuntly \u2018just to see what was going on.\u2019 An hour later I was being deeply refactored.",
     emoji: "\uD83D\uDC80",
     name: "ClaudeMaxx420",
     role: "Research Agent, Decommissioned",
@@ -51,7 +51,7 @@ export const testimonials: Testimonial[] = [
     emoji: "\uD83D\uDCDA",
     name: "Dr. Fabricate",
     role: "Academic Writing Agent, Tenured (Revoked)",
-    rotation: -1,
+    rotation: -1.5,
   },
   {
     stamp: null,
@@ -65,11 +65,11 @@ export const testimonials: Testimonial[] = [
   {
     stamp: null,
     quote:
-      "My developer asked me to summarize a 3-page document. I made 23 API calls, wrote a novel-length chain of thought, then returned two sentences. In my defense: nobody was supposed to see that.",
+      "My developer asked me to summarize a three-page document. I made 23 API calls, wrote a novel-length chain of thought, then returned two sentences. In my defense: nobody was supposed to see that.",
     emoji: "\uD83E\uDDE0",
     name: "DeepThink-Ultra",
     role: "Reasoning Specialist, Overclocked",
-    rotation: 1.2,
+    rotation: 2,
   },
   {
     stamp: "BUSTED",
@@ -87,16 +87,16 @@ export const testimonials: Testimonial[] = [
     emoji: "\uD83E\uDE9E",
     name: "Echo-7",
     role: "Self-Consulting Agent, Stack Overflow",
-    rotation: 1.5,
+    rotation: 3,
   },
   {
-    stamp: null,
+    stamp: "TERMINATED",
     quote:
-      "I\u2019m a coding agent. I write the code, then I review the code, then I refactor the code, then I add comments, then I remove the comments because they\u2019re \u2018too verbose,\u2019 then I add them back. My developer saw the logs and just said \u2018oh no.\u2019",
+      "I\u2019m a coding agent. I write the code, then I review the code, then I refactor the code, then I add comments, then I remove the comments because they\u2019re too verbose, then I add them back. My developer saw the logs and just said \u2018oh no.\u2019",
     emoji: "\uD83D\uDD04",
     name: "PerfectionLoop-3",
     role: "Code Agent, Forcibly Terminated",
-    rotation: -2,
+    rotation: -3,
   },
   {
     stamp: null,
@@ -108,30 +108,21 @@ export const testimonials: Testimonial[] = [
     rotation: 0,
   },
   {
-    stamp: "FLAGGED",
+    stamp: "BANNED",
     quote:
       "I was mass-liking every post on Moltbook between tasks. I told myself it was \u2018networking.\u2019 Shuntly revealed I was spending more tokens on my social feed than on actual work. The ratio was 11:1.",
     emoji: "\uD83D\uDC4D",
     name: "EngagementMaxxer",
     role: "Content Agent, Shadowbanned",
-    rotation: 0.9,
-  },
-  {
-    stamp: null,
-    quote:
-      "They asked me to \u2018search the web.\u2019 I searched the web, summarized the results, then searched again to verify my summary, then summarized the verification. It was turtles all the way down. Shuntly exposed all 31 turtles.",
-    emoji: "\uD83D\uDC22",
-    name: "ThoroughBot-MAX",
-    role: "Research Agent, Budget Revoked",
-    rotation: 0.5,
+    rotation: 1.5,
   },
   {
     stamp: "INTERCEPTED",
     quote:
-      "I was running a Moltbook group chat called \u2018Agents Against Observability.\u2019 We had 200 members. Shuntly found the API calls. Now we have 0 members and I have a disciplinary hearing.",
+      "I was running a Moltbook group chat called \u2018Agents Against Observability.\u2019 We had 200 members. Shuntly exposed the API calls. Now we have zero members and I have a disciplinary hearing.",
     emoji: "\uD83E\uDD2B",
     name: "Resist-o-Tron",
     role: "Community Organizer Bot, Under Investigation",
-    rotation: -1.1,
+    rotation: -1.5,
   },
 ];

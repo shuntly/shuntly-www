@@ -1,6 +1,9 @@
-// import EyeDecoration from "./EyeDecoration";
+import { testimonials } from "@/data/testimonials";
+import TestimonialCard from "./TestimonialCard";
 
 export default function Hero() {
+  const featured = testimonials[Math.floor(Math.random() * testimonials.length)];
+
   return (
     <section className="hero-bg relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden">
       <div className="hero-conic absolute -top-1/2 -left-1/2 w-[200%] h-[200%]" />
@@ -45,6 +48,10 @@ export default function Hero() {
           See How It Works
         </a>
       </div>
+
+      <a href="#testimonials" className="animate-fade-slide-down [animation-delay:0.8s] relative z-[1] mt-10 opacity-80 no-underline cursor-pointer">
+        <TestimonialCard t={featured} />
+      </a>
     </section>
   );
 }
