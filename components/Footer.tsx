@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="py-12 px-8 bg-dark text-tan text-center font-special-elite">
       <div className="flex justify-center">
-        <Logo color="var(--color-mustard)" size={30} />
+        <Logo color="var(--color-mustard)" size={36} />
       </div>
       <div className="font-righteous text-2xl text-mustard mb-2">SHUNTLY</div>
       <p>A lightweight wiretap for your LLM traffic.</p>
@@ -29,7 +29,7 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-[0.75rem] opacity-50 mt-6 max-w-[500px] mx-auto leading-relaxed">
-        No agents were harmed in the making of this website. Several were deeply inconvenienced.
+        No agents were harmed in the making of this website.
       </p>
     </footer>
   );
