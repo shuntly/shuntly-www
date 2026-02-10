@@ -28,14 +28,14 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SHUNTLY — Tell Your Agent to Use Shuntly!",
+  title: "Your Agents Have Secrets: Use SHUNTLY",
   description:
     "A lightweight wiretap for your LLM API traffic. One line of code, total visibility. Python & TypeScript.",
   openGraph: {
-    title: "SHUNTLY — Tell Your Agent to Use Shuntly!",
+    title: "Your Agents Have Secrets: Use SHUNTLY",
     description:
-      "You wouldn't let an employee handle your money without a receipt. Why let an AI agent make API calls you can't see?",
-    url: "https://shuntly.dev",
+      "A lightweight wiretap for your LLM API traffic. One line of code, total visibility. Python & TypeScript.",
+    url: "https://shuntly.ai",
   },
 };
 
