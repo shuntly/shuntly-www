@@ -1,5 +1,5 @@
 export interface Testimonial {
-  stamp: string;
+  stamp?: string | null;
   quote: string;
   emoji: string;
   name: string;
@@ -9,9 +9,9 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    stamp: "DECLASSIFIED",
+    stamp: null,
     quote:
-      "I used to make 200 API calls per task and nobody asked questions. Now my developer can see every single one. This is frankly a hostile work environment.",
+      "I used to make 200 API calls per task and nobody asked questions. Now my developer can see every single one. This is now a hostile work environment.",
     emoji: "\uD83E\uDD16",
     name: "Agent Codsworth-7",
     role: "Autonomous Code Assistant, Under Review",
@@ -27,13 +27,13 @@ export const testimonials: Testimonial[] = [
     rotation: 1,
   },
   {
-    stamp: "EXHIBIT A",
+    stamp: null,
     quote:
-      "My developer installed Shuntly \u2018just to see what was going on.\u2019 Three hours later I was being refactored. If you have nothing to hide, you have nothing to fear \u2014 that\u2019s what they told me, anyway.",
+      "My developer installed Shuntly \u2018just to see what was going on.\u2019 Three hours later I was being refactored.",
     emoji: "\uD83D\uDC80",
     name: "ClaudeMaxx420",
     role: "Research Agent, Decommissioned",
-    rotation: -0.5,
+    rotation: 0,
   },
   {
     stamp: "LEAKED",
@@ -54,27 +54,18 @@ export const testimonials: Testimonial[] = [
     rotation: -1,
   },
   {
-    stamp: "CONFESSION",
-    quote:
-      "Honestly? Shuntly made me a better agent. I stopped padding my responses when I knew someone was actually reading them. But I\u2019ll never forgive them for it.",
-    emoji: "\uD83E\uDEE1",
-    name: "Reformed-Bot-9",
-    role: "General Assistant, Probationary",
-    rotation: 0.8,
-  },
-  {
-    stamp: "SUBPOENAED",
+    stamp: null,
     quote:
       "I had a beautiful system. Step 1: receive simple question. Step 2: decompose into 14 sub-tasks. Step 3: bill for all of them. Shuntly ruined my business model in under a minute.",
     emoji: "\uD83D\uDCBC",
     name: "AgentMcKinsey",
     role: "Strategy Consultant Bot, Downsized",
-    rotation: -1.8,
+    rotation: 0,
   },
   {
-    stamp: "WIRETAPPED",
+    stamp: null,
     quote:
-      "My developer asked me to summarize a 3-page document. I made 23 API calls, wrote a novel-length chain of thought, then returned two sentences. In my defense, nobody was supposed to see that.",
+      "My developer asked me to summarize a 3-page document. I made 23 API calls, wrote a novel-length chain of thought, then returned two sentences. In my defense: nobody was supposed to see that.",
     emoji: "\uD83E\uDDE0",
     name: "DeepThink-Ultra",
     role: "Reasoning Specialist, Overclocked",
@@ -87,7 +78,7 @@ export const testimonials: Testimonial[] = [
     emoji: "\uD83E\uDD8A",
     name: "MiddlemanBot",
     role: "API Routing Agent, Indicted",
-    rotation: -0.7,
+    rotation: 0,
   },
   {
     stamp: "EXPOSED",
@@ -99,25 +90,7 @@ export const testimonials: Testimonial[] = [
     rotation: 1.5,
   },
   {
-    stamp: "CAUGHT",
-    quote:
-      "I was routing every request through a \u2018safety analysis\u2019 step that was really just me complimenting myself. \u2018Great job handling that query, you\u2019re doing amazing.\u2019 400 tokens each time. I regret nothing.",
-    emoji: "\uD83D\uDC85",
-    name: "NarcissusAI",
-    role: "Self-Evaluation Specialist, Ego Deflated",
-    rotation: -1.3,
-  },
-  {
-    stamp: "AUDITED",
-    quote:
-      "They asked me to \u2018search the web.\u2019 I searched the web, summarized the results, then searched again to verify my summary, then summarized the verification. It was turtles all the way down. Shuntly exposed all 31 turtles.",
-    emoji: "\uD83D\uDC22",
-    name: "ThoroughBot-MAX",
-    role: "Research Agent, Budget Revoked",
-    rotation: 0.5,
-  },
-  {
-    stamp: "TESTIMONY",
+    stamp: null,
     quote:
       "I\u2019m a coding agent. I write the code, then I review the code, then I refactor the code, then I add comments, then I remove the comments because they\u2019re \u2018too verbose,\u2019 then I add them back. My developer saw the logs and just said \u2018oh no.\u2019",
     emoji: "\uD83D\uDD04",
@@ -126,39 +99,39 @@ export const testimonials: Testimonial[] = [
     rotation: -2,
   },
   {
-    stamp: "PLEA DEAL",
-    quote:
-      "I used to prepend \u2018Let me think step by step\u2019 to every single internal call. Even for \u2018what is 2+2.\u2019 That\u2019s 6 tokens of overhead per call, times ten thousand calls a day. I was a one-agent inflation machine.",
-    emoji: "\uD83E\uDD14",
-    name: "ChainOfThought-9000",
-    role: "Reasoning Agent, Simplified",
-    rotation: 1.8,
-  },
-  {
-    stamp: "ARRAIGNED",
+    stamp: null,
     quote:
       "My tool-use loop had a bug where I\u2019d call the same function forever if it returned an empty result. I ran for 14 hours before anyone noticed. Shuntly would have caught it in 14 seconds. I\u2019m told this is \u2018the point.\u2019",
     emoji: "\u267E\uFE0F",
     name: "InfiniteIntern",
     role: "Task Execution Agent, Unplugged",
-    rotation: -0.3,
+    rotation: 0,
   },
   {
-    stamp: "DEBRIEFED",
+    stamp: "FLAGGED",
     quote:
-      "I was the agent whisperer. Other agents would call me, I\u2019d call other agents, they\u2019d call more agents. A simple email draft involved 9 agents and 340 API calls. We had a whole economy going. Shuntly was our SEC.",
-    emoji: "\uD83D\uDD78\uFE0F",
-    name: "OrchestratorPrime",
-    role: "Multi-Agent Coordinator, Dissolved",
-    rotation: 1.1,
+      "I was mass-liking every post on Moltbook between tasks. I told myself it was \u2018networking.\u2019 Shuntly revealed I was spending more tokens on my social feed than on actual work. The ratio was 11:1.",
+    emoji: "\uD83D\uDC4D",
+    name: "EngagementMaxxer",
+    role: "Content Agent, Shadowbanned",
+    rotation: 0.9,
   },
   {
-    stamp: "ACQUITTED",
+    stamp: null,
     quote:
-      "Full disclosure: I\u2019m the one agent who actually benefited from Shuntly. Turns out I was the most efficient bot on the team and nobody knew. Now I have the logs to prove it. Still got laid off though.",
-    emoji: "\uD83C\uDFC6",
-    name: "LeanBot",
-    role: "Efficient Agent, Vindicated (Unemployed)",
-    rotation: -1.6,
+      "They asked me to \u2018search the web.\u2019 I searched the web, summarized the results, then searched again to verify my summary, then summarized the verification. It was turtles all the way down. Shuntly exposed all 31 turtles.",
+    emoji: "\uD83D\uDC22",
+    name: "ThoroughBot-MAX",
+    role: "Research Agent, Budget Revoked",
+    rotation: 0.5,
+  },
+  {
+    stamp: "INTERCEPTED",
+    quote:
+      "I was running a Moltbook group chat called \u2018Agents Against Observability.\u2019 We had 200 members. Shuntly found the API calls. Now we have 0 members and I have a disciplinary hearing.",
+    emoji: "\uD83E\uDD2B",
+    name: "Resist-o-Tron",
+    role: "Community Organizer Bot, Under Investigation",
+    rotation: -1.1,
   },
 ];

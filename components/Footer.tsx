@@ -22,12 +22,6 @@ export default function Footer() {
         >
           npm
         </a>
-        <a
-          href="https://shuntly.dev"
-          className="text-tan no-underline font-terminal text-[0.95rem] tracking-[0.1em] transition-colors hover:text-mustard"
-        >
-          Docs
-        </a>
       </div>
       <p className="text-[0.75rem] opacity-50 mt-6 max-w-[500px] mx-auto leading-relaxed">
         No agents were harmed in the making of this website. Several were deeply inconvenienced.

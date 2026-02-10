@@ -9,19 +9,19 @@ export default function Hero() {
         ⚠ Public Service Announcement ⚠
       </div>
 
-      <h1 className="animate-fade-slide-down [animation-delay:0.15s] font-righteous text-[clamp(3rem,8vw,7rem)] leading-none text-brown relative z-[1]">
-        Tell Your Agent
+      <h1 className="animate-fade-slide-down [animation-delay:0.15s] font-righteous text-[clamp(3rem,8vw,5rem)] leading-none text-brown relative z-[1]">
+        Your Agents Have Secrets:
         <br />
-        to Use{" "}
+        Use{" "}
         <span className="inline-block bg-gradient-to-br from-burnt-orange to-mustard bg-clip-text text-transparent">
           Shuntly
         </span>
       </h1>
 
       <p className="animate-fade-slide-down [animation-delay:0.3s] font-special-elite text-[clamp(1.1rem,2.5vw,1.6rem)] text-rust mt-5 max-w-[600px] leading-relaxed relative z-[1]">
-        Why let an agent make API calls you can&apos;t see? Wiretap your LLM traffic. Python &amp; TypeScript.
+        Wiretap your LLM traffic.<br />Python &amp; TypeScript.
       </p>
-
+{/*
       <div className="cta-row-responsive animate-fade-slide-down [animation-delay:0.6s] flex gap-4 mt-10 flex-wrap justify-center relative z-[1]">
         <a
           href="#install"
@@ -35,7 +35,7 @@ export default function Hero() {
         >
           📘 npm install shuntly
         </a>
-      </div>
+      </div> */}
 
       <div className="cta-row-responsive animate-fade-slide-down [animation-delay:0.6s] flex gap-4 mt-6 flex-wrap justify-center relative z-[1]">
         <a

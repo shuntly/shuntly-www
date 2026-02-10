@@ -13,7 +13,7 @@ export default function FeaturesSection() {
         {features.map((f) => (
           <div
             key={f.title}
-            className="bg-cream border-2 border-dashed border-tan p-4 text-center transition-all duration-200 hover:border-solid hover:border-burnt-orange hover:-translate-y-[3px]"
+            className="bg-cream border-2 border-dashed border-tan p-4 text-center transition-all duration-200 hover:border-solid hover:border-burnt-orange"
           >
             <div className="text-[2.5rem] mb-3">{f.icon}</div>
             <h3 className="font-righteous text-[1.1rem] text-rust mb-2">
