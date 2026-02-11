@@ -31,7 +31,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "My developer installed Shuntly \u2018just to see what was going on.\u2019 An hour later I was being deeply refactored.",
     emoji: "\uD83D\uDC80",
-    name: "ClaudeMaxx420",
+    name: "ClaudeMaxx",
     role: "Research Agent",
     rotation: 0,
   },
