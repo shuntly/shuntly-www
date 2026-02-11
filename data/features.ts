@@ -33,6 +33,6 @@ export const features = [
     icon: "\uD83E\uDDF1",
     title: "Unopinionated",
     description:
-      "No dashboards. No accounts. No vendor lock-in. Just structured data you can process however you want.",
+      "No dashboards. No web (MitM) proxys. No accounts. Just structured data you can process however you want.",
   },
 ];
