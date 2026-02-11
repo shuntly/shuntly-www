@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import SurveillanceTicker from "@/components/SurveillanceTicker";
 import ProblemSection from "@/components/ProblemSection";
 import HowItWorks from "@/components/HowItWorks";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <SurveillanceTicker /> */}
       <ProblemSection />
       <HowItWorks />
       <FeaturesSection />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-python";
 import "prismjs/components/prism-typescript";
@@ -25,7 +25,11 @@ const tabs: Tab[] = [
     code: `from shuntly import shunt
 from anthropic import Anthropic
 
-client = shunt(Anthropic())`,
+client = shunt(Anthropic(api_key=API_KEY)) # Call shuntly()
+resp = client.messages.create(
+    model=MODEL,
+    messages=[{'role': 'user', 'content': 'What is Shuntly?'}],
+)`,
   },
   {
     id: "py-openai",
@@ -34,16 +38,24 @@ client = shunt(Anthropic())`,
     code: `from shuntly import shunt
 from openai import OpenAI
 
-client = shunt(OpenAI())`,
+client = shunt(OpenAI(api_key=_API_KEY)) # Call shuntly()
+resp = client.chat.completions.create(
+    model=MODEL,
+    messages=[{'role': 'user', 'content': 'What is Shuntly?'}],
+)`,
   },
   {
     id: "py-google",
     lang: "python",
     label: <><PythonLogo className={iconClass} /> Google</>,
     code: `from shuntly import shunt
-import google.generativeai as genai
+from google import genai
 
-client = shunt(genai.GenerativeModel("gemini-pro"))`,
+client = shunt(genai.Client(api_key=API_KEY)) # Call shuntly()
+resp = client.models.generate_content(
+    model=MODEL,
+    contents='What is Shuntly?',
+)`,
   },
   // TS examples
   {
@@ -53,7 +65,7 @@ client = shunt(genai.GenerativeModel("gemini-pro"))`,
     code: `import { shunt } from 'shuntly';
 import Anthropic from '@anthropic-ai/sdk';
 
-const client = shunt(new Anthropic({ apiKey: API_KEY }));
+const client = shunt(new Anthropic({ apiKey: API_KEY })); // Call shuntly()
 const resp = await client.messages.create({
   model: MODEL,
   messages: [{ role: "user", content: "What is Shuntly?" }],
@@ -66,7 +78,7 @@ const resp = await client.messages.create({
     code: `import { shunt } from 'shuntly';
 import OpenAI from 'openai';
 
-const client = shunt(new OpenAI({ apiKey: API_KEY }));
+const client = shunt(new OpenAI({ apiKey: API_KEY })); // Call shuntly()
 const resp = await client.chat.completions.create({
   model: MODEL,
   messages: [{ role: "user", content: "What is Shuntly?" }],
@@ -79,7 +91,7 @@ const resp = await client.chat.completions.create({
     code: `import { shunt } from 'shuntly';
 import { GoogleGenAI } from "@google/genai";
 
-const client = shunt(new GoogleGenAI({ apiKey: API_KEY }));
+const client = shunt(new GoogleGenAI({ apiKey: API_KEY })); // Call shuntly()
 const resp = await client.models.generateContent({
   model: MODEL,
   contents: "What is Shuntly?",
@@ -93,32 +105,29 @@ const resp = await client.models.generateContent({
     code: `import { shunt } from 'shuntly';
 import { complete, getModel } from "@mariozechner/pi-ai";
 
-const complete = shunt(complete);
+const complete = shunt(complete); // Call shuntly()
 const model = getModel("anthropic", "claude-haiku-4-5-20251001");
 const resp = await complete(model, {
   messages: [
     {
       role: "user",
-      content: "Reply with the single word: pong",
-      timestamp: Date.now(),
+      content: "What is Shuntly?",
     },
   ],
 });`,
   },
 ];
 
+const highlightedTabs = tabs.map((tab) => {
+  const grammar =
+    tab.lang === "python"
+      ? Prism.languages.python
+      : Prism.languages.typescript;
+  return { id: tab.id, lang: tab.lang, html: Prism.highlight(tab.code, grammar, tab.lang) };
+});
+
 export default function HowItWorks() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-
-  const active = tabs.find((t) => t.id === activeTab)!;
-
-  const highlighted = useMemo(() => {
-    const grammar =
-      active.lang === "python"
-        ? Prism.languages.python
-        : Prism.languages.typescript;
-    return Prism.highlight(active.code, grammar, active.lang);
-  }, [active]);
 
   return (
     <section
@@ -166,11 +175,16 @@ export default function HowItWorks() {
       </div>
 
       <div className="max-w-[700px] mx-auto relative z-[1]">
-        <pre className="bg-terminal/90 border-2 border-mustard p-4 font-terminal text-[0.9rem] leading-[1.7] overflow-x-auto text-left">
-          <code
-            className={`language-${active.lang}`}
-            dangerouslySetInnerHTML={{ __html: highlighted }}
-          />
+        <pre className="bg-terminal/70 border-2 border-mustard p-4 font-terminal text-[0.9rem] leading-[1.7] overflow-x-auto text-left grid">
+          {highlightedTabs.map((tab) => (
+            <code
+              key={tab.id}
+              className={`language-${tab.lang} col-start-1 row-start-1 ${
+                tab.id === activeTab ? "visible" : "invisible"
+              }`}
+              dangerouslySetInnerHTML={{ __html: tab.html }}
+            />
+          ))}
         </pre>
       </div>
     </section>

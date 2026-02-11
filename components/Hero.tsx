@@ -1,9 +1,9 @@
 import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "./TestimonialCard";
-import Logo from "./Logo";
+
+const featured = testimonials[Math.floor(Math.random() * testimonials.length)];
 
 export default function Hero() {
-  const featured = testimonials[Math.floor(Math.random() * testimonials.length)];
 
   return (
     <section className="hero-bg relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden">
