@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Prism from "prismjs";
+Prism.manual = true;
 import "prismjs/components/prism-python";
 import "prismjs/components/prism-typescript";
 import PythonLogo from "./PythonLogo";
