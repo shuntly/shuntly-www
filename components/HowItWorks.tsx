@@ -1,9 +1,114 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, type ReactNode } from "react";
+import Prism from "prismjs";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-typescript";
+import PythonLogo from "./PythonLogo";
+import TypeScriptLogo from "./TypeScriptLogo";
+
+type Tab = {
+  id: string;
+  lang: "python" | "typescript";
+  label: ReactNode;
+  code: string;
+};
+
+const iconClass = "inline-block w-[1.4em] h-[1.4em] align-[-0.15em] mr-1.5";
+
+const tabs: Tab[] = [
+  // Python examples
+  {
+    id: "py-anthropic",
+    lang: "python",
+    label: <><PythonLogo className={iconClass} /> Anthropic</>,
+    code: `from shuntly import shunt
+from anthropic import Anthropic
+
+client = shunt(Anthropic())`,
+  },
+  {
+    id: "py-openai",
+    lang: "python",
+    label: <><PythonLogo className={iconClass} /> OpenAI</>,
+    code: `from shuntly import shunt
+from openai import OpenAI
+
+client = shunt(OpenAI())`,
+  },
+  {
+    id: "py-gemini",
+    lang: "python",
+    label: <><PythonLogo className={iconClass} /> Gemini</>,
+    code: `from shuntly import shunt
+import google.generativeai as genai
+
+client = shunt(genai.GenerativeModel("gemini-pro"))`,
+  },
+  // TS examples
+  {
+    id: "ts-anthropic",
+    lang: "typescript",
+    label: <><TypeScriptLogo className={iconClass} /> Anthropic</>,
+    code: `import { shunt } from 'shuntly';
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = shunt(new Anthropic({ apiKey: API_KEY }));
+const resp = await client.messages.create({
+  model: MODEL,
+  messages: [{ role: "user", content: "What is Shuntly?" }],
+});`,
+  },
+  {
+    id: "ts-openai",
+    lang: "typescript",
+    label: <><TypeScriptLogo className={iconClass} /> OpenAI</>,
+    code: `import { shunt } from 'shuntly';
+import OpenAI from 'openai';
+
+const client = shunt(new OpenAI({ apiKey: API_KEY }));
+const resp = await client.chat.completions.create({
+  model: MODEL,
+  messages: [{ role: "user", content: "What is Shuntly?" }],
+});`,
+  },
+  {
+    id: "ts-gemini",
+    lang: "typescript",
+    label: <><TypeScriptLogo className={iconClass} /> Gemini</>,
+    code: `import { shunt } from 'shuntly';
+import { GoogleGenAI } from "@google/genai";
+
+const client = shunt(new GoogleGenAI({ apiKey: API_KEY }));
+const resp = await client.models.generateContent({
+  model: MODEL,
+  contents: "What is Shuntly?",
+});
+`,
+  },
+  {
+    id: "ts-piai",
+    lang: "typescript",
+    label: <><TypeScriptLogo className={iconClass} /> pi-ai</>,
+    code: `import { shunt } from 'shuntly';
+import { PiAI } from 'pi-ai';
+
+const client = shunt(new PiAI());`,
+  },
+];
 
 export default function HowItWorks() {
-  const [activeTab, setActiveTab] = useState<"python" | "typescript">("python");
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
+
+  const active = tabs.find((t) => t.id === activeTab)!;
+
+  const highlighted = useMemo(() => {
+    const grammar =
+      active.lang === "python"
+        ? Prism.languages.python
+        : Prism.languages.typescript;
+    return Prism.highlight(active.code, grammar, active.lang);
+  }, [active]);
 
   return (
     <section
@@ -14,98 +119,50 @@ export default function HowItWorks() {
         How It Works
       </p>
       <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-cream mb-8 text-center relative z-[1]">
-        One Line. Total Visibility.
+        One Call. Total Visibility.
       </h2>
 
-      <div className="flex justify-center max-w-[700px] mx-auto relative z-[1]">
-        <button
-          onClick={() => setActiveTab("python")}
-          className={`code-tab-responsive font-terminal text-[1.1rem] tracking-[0.1em] py-2 px-8 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
-            activeTab === "python"
-              ? "bg-mustard text-brown"
-              : "bg-transparent text-mustard hover:bg-mustard/15"
-          }`}
-        >
-          🐍 Python
-        </button>
-        <button
-          onClick={() => setActiveTab("typescript")}
-          className={`code-tab-responsive font-terminal text-[1.1rem] tracking-[0.1em] py-2 px-8 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
-            activeTab === "typescript"
-              ? "bg-mustard text-brown"
-              : "bg-transparent text-mustard hover:bg-mustard/15"
-          }`}
-        >
-          📘 TypeScript
-        </button>
+      <div className="max-w-[700px] mx-auto relative z-[1]">
+        <div className="flex">
+          {tabs.filter((t) => t.lang === "python").map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-2 cursor-pointer transition-all ${
+                activeTab === tab.id
+                  ? "bg-mustard/90 text-brown"
+                  : "bg-transparent text-mustard hover:bg-mustard/15"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex -mt-[2px]">
+          {tabs.filter((t) => t.lang === "typescript").map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
+                activeTab === tab.id
+                  ? "bg-mustard text-brown"
+                  : "bg-transparent text-mustard hover:bg-mustard/15"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="max-w-[700px] mx-auto relative z-[1]">
-        {activeTab === "python" ? (
-          <pre className="bg-terminal border-2 border-mustard p-4 font-terminal text-[0.9rem] leading-[1.7] text-terminal-green overflow-x-auto text-left">
-            <span className="syn-comment">
-              # Before: you&apos;re in the dark
-            </span>
-            {"\n"}
-            <span className="syn-keyword">from</span> anthropic{" "}
-            <span className="syn-keyword">import</span> Anthropic{"\n"}
-            client = Anthropic(){"\n"}
-            {"\n"}
-            <span className="syn-comment"># After: total visibility</span>
-            {"\n"}
-            <span className="syn-keyword">from</span> shuntly{" "}
-            <span className="syn-keyword">import</span>{" "}
-            <span className="syn-func">shunt</span>
-            {"\n"}
-            client = <span className="syn-func">shunt</span>(Anthropic()){"\n"}
-            {"\n"}
-            <span className="syn-comment">
-              # That&apos;s it. Every request and response
-            </span>
-            {"\n"}
-            <span className="syn-comment">
-              # is now captured. Your agent can&apos;t hide.
-            </span>
-          </pre>
-        ) : (
-          <pre className="bg-terminal border-2 border-mustard p-4 font-terminal text-[0.9rem] leading-[1.7] text-terminal-green overflow-x-auto text-left">
-            <span className="syn-comment">
-              {"// "}Before: blissful ignorance
-            </span>
-            {"\n"}
-            <span className="syn-keyword">import</span> Anthropic{" "}
-            <span className="syn-keyword">from</span>{" "}
-            <span className="syn-string">
-              &apos;@anthropic-ai/sdk&apos;
-            </span>
-            ;{"\n"}
-            <span className="syn-keyword">const</span> client ={" "}
-            <span className="syn-keyword">new</span>{" "}
-            <span className="syn-func">Anthropic</span>();{"\n"}
-            {"\n"}
-            <span className="syn-comment">
-              {"// "}After: trust but verify
-            </span>
-            {"\n"}
-            <span className="syn-keyword">import</span> {"{ "}
-            <span className="syn-func">shunt</span>
-            {" }"} <span className="syn-keyword">from</span>{" "}
-            <span className="syn-string">&apos;shuntly&apos;</span>;{"\n"}
-
-            <span className="syn-keyword">const</span> client ={" "}
-            <span className="syn-func">shunt</span>(
-            <span className="syn-keyword">new</span>{" "}
-            <span className="syn-func">Anthropic</span>());{"\n"}
-            {"\n"}
-            <span className="syn-comment">
-              {"// "}Full request/response logging.
-            </span>
-            {"\n"}
-            <span className="syn-comment">{"// "}No more secrets.</span>
-          </pre>
-        )}
+        <pre className="bg-terminal/90 border-2 border-mustard p-4 font-terminal text-[0.9rem] leading-[1.7] overflow-x-auto text-left">
+          <code
+            className={`language-${active.lang}`}
+            dangerouslySetInnerHTML={{ __html: highlighted }}
+          />
+        </pre>
       </div>
-
     </section>
   );
 }

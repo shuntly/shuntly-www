@@ -183,11 +183,36 @@ body::after {
   animation: lookAround 4s ease-in-out infinite;
 }
 
-/* Syntax highlighting for code blocks */
-.syn-comment { color: #666; }
-.syn-keyword { color: #D4A017; }
-.syn-string { color: #FF6B6B; }
-.syn-func { color: #66D9EF; }
+/* Prism.js custom theme — retro terminal palette */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #33FF33;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata { color: #666; }
+
+.token.keyword,
+.token.operator,
+.token.builtin { color: #D4A017; }
+
+.token.string,
+.token.attr-value { color: #FF6B6B; }
+
+.token.function,
+.token.class-name { color: #66D9EF; }
+
+.token.number,
+.token.boolean { color: #FF6B6B; }
+
+.token.punctuation { color: #999; }
+
+.token.import,
+.token.from { color: #D4A017; }
+
+.token.plain { color: #33FF33; }
 
 /* Hide scrollbar but keep scroll */
 .hide-scrollbar {
