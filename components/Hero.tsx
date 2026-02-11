@@ -5,10 +5,10 @@ const featured = testimonials[Math.floor(Math.random() * testimonials.length)];
 
 export default function Hero() {
   return (
-    <section className="hero-bg relative min-h-screen flex flex-col items-center justify-center text-center">
+    <section className="hero-bg relative min-h-screen flex flex-col items-center justify-center text-center px-8">
       <div className="hero-conic absolute -top-1/2 -left-1/2 w-[200%] h-[200%]" />
 
-      <div className="animate-fade-slide-down inline-block bg-rust/60 text-cream font-terminal text-[0.9rem] tracking-[0.2em] px-5 py-[0.4em] uppercase -rotate-3 mb-6 relative z-[1]">
+      <div className="animate-fade-slide-down inline-block bg-rust/70 text-cream font-terminal text-[0.9rem] tracking-[0.2em] px-5 py-[0.4em] uppercase -rotate-3 mb-6 relative z-[1]">
         ⚠ Public Service Announcement ⚠
       </div>
 
