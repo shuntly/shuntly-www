@@ -15,7 +15,7 @@ type Tab = {
   code: string;
 };
 
-const iconClass = "inline-block w-[1.4em] h-[1.4em] align-[-0.15em] mr-1.5";
+const iconClass = "inline-block w-[1.1em] h-[1.1em] align-[-0.15em]";
 
 const tabs: Tab[] = [
   // Python examples
@@ -169,44 +169,29 @@ export default function HowItWorks() {
         How It Works
       </p>
       <h2 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-cream mb-8 text-center relative z-[1]">
-        One Call. Total Visibility.
+        One Call. Total Visibility
       </h2>
 
-      <div className="max-w-[700px] mx-auto relative z-[1]">
-        <div className="flex">
-          {tabs
-            .filter((t) => t.lang === "python")
-            .map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-2 cursor-pointer transition-all ${
-                  activeTab === tab.id
-                    ? "bg-mustard/90 text-brown"
-                    : "bg-transparent text-mustard hover:bg-mustard/15"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-        </div>
-        <div className="flex -mt-[2px]">
-          {tabs
-            .filter((t) => t.lang === "typescript")
-            .map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
-                  activeTab === tab.id
-                    ? "bg-mustard text-brown"
-                    : "bg-transparent text-mustard hover:bg-mustard/15"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-        </div>
+      <div className="max-w-[700px] mx-auto relative z-[1] border-t-2 border-x-2 border-mustard">
+        {(["python", "typescript"] as const).map((lang) => (
+          <div key={lang} className="flex flex-wrap">
+            {tabs
+              .filter((t) => t.lang === lang)
+              .map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`code-tab-responsive grow basis-[calc(50%-1px)] sm:basis-0 font-semibold text-sm tracking-[0.05em] py-2 px-4 cursor-pointer transition-all ${
+                    activeTab === tab.id
+                      ? "bg-mustard text-brown"
+                      : "bg-mustard/20 text-mustard hover:bg-mustard/40"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+          </div>
+        ))}
       </div>
 
       <div className="max-w-[700px] mx-auto relative z-[1]">

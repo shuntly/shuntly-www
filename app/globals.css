@@ -9,10 +9,9 @@
   --color-brown: #3e2723;
   --color-tan: #d2b48c;
   --color-paper: #f5e6c8;
-  --color-teal: #008080;
   --color-dark: #1a1408;
   --color-terminal: #0d0d0d;
-  --color-terminal-green: #33ff33;
+  --color-terminal-green: #d2b48c;
 
   --font-righteous: var(--ff-righteous);
   --font-special-elite: var(--ff-special-elite);
@@ -139,26 +138,6 @@ body::after {
   left: 6px;
 }
 
-/* Problem section cross pattern background */
-.problem-bg {
-  background:
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-    var(--color-paper);
-}
-
-/* Problem card number watermark */
-.problem-card::before {
-  content: attr(data-number);
-  font-family: var(--font-righteous), cursive;
-  font-size: 4rem;
-  color: var(--color-mustard);
-  opacity: 0.2;
-  position: absolute;
-  top: 0.2rem;
-  right: 1rem;
-  line-height: 1;
-}
-
 /* How-it-works section vertical grid lines */
 .how-grid-lines::before {
   content: "";
@@ -190,32 +169,10 @@ body::after {
   font-family: Georgia, serif;
 }
 
-/* Eye decoration */
-.eye-shape {
-  width: 80px;
-  height: 40px;
-  border: 3px solid var(--color-brown);
-  border-radius: 50%;
-  position: relative;
-}
-
-.eye-shape::after {
-  content: "";
-  width: 18px;
-  height: 18px;
-  background: var(--color-brown);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: lookAround 4s ease-in-out infinite;
-}
-
 /* Prism.js custom theme — retro terminal palette */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #33ff33;
+  color: #d2b48c;
 }
 
 .token.comment,
@@ -226,24 +183,27 @@ pre[class*="language-"] {
 }
 
 .token.keyword,
-.token.operator,
 .token.builtin {
   color: #d4a017;
 }
 
+.token.operator {
+  color: #fff8e7;
+}
+
 .token.string,
 .token.attr-value {
-  color: #ff6b6b;
+  color: #568203;
 }
 
 .token.function,
 .token.class-name {
-  color: #66d9ef;
+  color: #cc5500;
 }
 
 .token.number,
 .token.boolean {
-  color: #ff6b6b;
+  color: #568203;
 }
 
 .token.punctuation {
@@ -256,7 +216,7 @@ pre[class*="language-"] {
 }
 
 .token.plain {
-  color: #33ff33;
+  color: #d2b48c;
 }
 
 /* Hide scrollbar but keep scroll */
