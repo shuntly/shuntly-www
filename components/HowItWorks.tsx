@@ -37,9 +37,9 @@ from openai import OpenAI
 client = shunt(OpenAI())`,
   },
   {
-    id: "py-gemini",
+    id: "py-google",
     lang: "python",
-    label: <><PythonLogo className={iconClass} /> Gemini</>,
+    label: <><PythonLogo className={iconClass} /> Google</>,
     code: `from shuntly import shunt
 import google.generativeai as genai
 
@@ -73,9 +73,9 @@ const resp = await client.chat.completions.create({
 });`,
   },
   {
-    id: "ts-gemini",
+    id: "ts-google",
     lang: "typescript",
-    label: <><TypeScriptLogo className={iconClass} /> Gemini</>,
+    label: <><TypeScriptLogo className={iconClass} /> Google</>,
     code: `import { shunt } from 'shuntly';
 import { GoogleGenAI } from "@google/genai";
 
@@ -91,9 +91,19 @@ const resp = await client.models.generateContent({
     lang: "typescript",
     label: <><TypeScriptLogo className={iconClass} /> pi-ai</>,
     code: `import { shunt } from 'shuntly';
-import { PiAI } from 'pi-ai';
+import { complete, getModel } from "@mariozechner/pi-ai";
 
-const client = shunt(new PiAI());`,
+const complete = shunt(complete);
+const model = getModel("anthropic", "claude-haiku-4-5-20251001");
+const resp = await complete(model, {
+  messages: [
+    {
+      role: "user",
+      content: "Reply with the single word: pong",
+      timestamp: Date.now(),
+    },
+  ],
+});`,
   },
 ];
 
