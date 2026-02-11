@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-mustard: #D4A017;
-  --color-burnt-orange: #CC5500;
+  --color-mustard: #d4a017;
+  --color-burnt-orange: #cc5500;
   --color-avocado: #568203;
-  --color-rust: #B7410E;
-  --color-cream: #FFF8E7;
-  --color-brown: #3E2723;
-  --color-tan: #D2B48C;
-  --color-paper: #F5E6C8;
+  --color-rust: #b7410e;
+  --color-cream: #fff8e7;
+  --color-brown: #3e2723;
+  --color-tan: #d2b48c;
+  --color-paper: #f5e6c8;
   --color-teal: #008080;
-  --color-dark: #1A1408;
-  --color-terminal: #0D0D0D;
-  --color-terminal-green: #33FF33;
+  --color-dark: #1a1408;
+  --color-terminal: #0d0d0d;
+  --color-terminal-green: #33ff33;
 
   --font-righteous: var(--ff-righteous);
   --font-special-elite: var(--ff-special-elite);
@@ -38,7 +38,7 @@ body {
 
 /* Scanline overlay */
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background: repeating-linear-gradient(
@@ -54,31 +54,60 @@ body::after {
 
 /* Keyframes */
 @keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slowSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes lookAround {
-  0%, 100% { transform: translate(-50%, -50%); }
-  25% { transform: translate(-20%, -50%); }
-  50% { transform: translate(-50%, -50%); }
-  75% { transform: translate(-80%, -50%); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-20%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  75% {
+    transform: translate(-80%, -50%);
+  }
 }
 
 /* Hero multi-layer background */
 .hero-bg {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(212, 160, 23, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(204, 85, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(212, 160, 23, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 50%,
+      rgba(204, 85, 0, 0.1) 0%,
+      transparent 50%
+    ),
     linear-gradient(180deg, var(--color-cream) 0%, var(--color-paper) 100%);
 }
 
@@ -94,7 +123,7 @@ body::after {
 
 /* CTA button shadow pseudo-element */
 .cta-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 4px;
   left: 4px;
@@ -132,7 +161,7 @@ body::after {
 
 /* How-it-works section vertical grid lines */
 .how-grid-lines::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
@@ -150,7 +179,7 @@ body::after {
 }
 
 .testimonial-card::before {
-  content: '\275D';
+  content: "\275D";
   font-size: 4rem;
   color: var(--color-mustard);
   opacity: 0.3;
@@ -171,7 +200,7 @@ body::after {
 }
 
 .eye-shape::after {
-  content: '';
+  content: "";
   width: 18px;
   height: 18px;
   background: var(--color-brown);
@@ -186,33 +215,49 @@ body::after {
 /* Prism.js custom theme — retro terminal palette */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #33FF33;
+  color: #33ff33;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata { color: #666; }
+.token.cdata {
+  color: #666;
+}
 
 .token.keyword,
 .token.operator,
-.token.builtin { color: #D4A017; }
+.token.builtin {
+  color: #d4a017;
+}
 
 .token.string,
-.token.attr-value { color: #FF6B6B; }
+.token.attr-value {
+  color: #ff6b6b;
+}
 
 .token.function,
-.token.class-name { color: #66D9EF; }
+.token.class-name {
+  color: #66d9ef;
+}
 
 .token.number,
-.token.boolean { color: #FF6B6B; }
+.token.boolean {
+  color: #ff6b6b;
+}
 
-.token.punctuation { color: #999; }
+.token.punctuation {
+  color: #999;
+}
 
 .token.import,
-.token.from { color: #D4A017; }
+.token.from {
+  color: #d4a017;
+}
 
-.token.plain { color: #33FF33; }
+.token.plain {
+  color: #33ff33;
+}
 
 /* Hide scrollbar but keep scroll */
 .hide-scrollbar {
@@ -225,7 +270,13 @@ pre[class*="language-"] {
 
 /* Responsive overrides */
 @media (max-width: 600px) {
-  .cta-row-responsive { flex-direction: column; align-items: center; }
+  .cta-row-responsive {
+    flex-direction: column;
+    align-items: center;
+  }
 
-  .code-tab-responsive { padding: 0.5em 1.2em; font-size: 1rem; }
+  .code-tab-responsive {
+    padding: 0.5em 1.2em;
+    font-size: 1rem;
+  }
 }

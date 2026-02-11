@@ -4,7 +4,6 @@ import TestimonialCard from "./TestimonialCard";
 const featured = testimonials[Math.floor(Math.random() * testimonials.length)];
 
 export default function Hero() {
-
   return (
     <section className="hero-bg relative min-h-screen flex flex-col items-center justify-center text-center p-8 overflow-hidden">
       <div className="hero-conic absolute -top-1/2 -left-1/2 w-[200%] h-[200%]" />
@@ -23,9 +22,11 @@ export default function Hero() {
       </h1>
 
       <p className="animate-fade-slide-down [animation-delay:0.3s] font-special-elite text-[clamp(1.1rem,2.5vw,1.6rem)] text-rust mt-5 max-w-[600px] leading-relaxed relative z-[1]">
-        Wiretap your LLM traffic.<br />Python &amp; TypeScript.
+        Wiretap your LLM traffic.
+        <br />
+        Python &amp; TypeScript.
       </p>
-{/*
+      {/*
       <div className="cta-row-responsive animate-fade-slide-down [animation-delay:0.6s] flex gap-4 mt-10 flex-wrap justify-center relative z-[1]">
         <a
           href="#install"
@@ -50,7 +51,10 @@ export default function Hero() {
         </a>
       </div>
 
-      <a href="#testimonials" className="animate-fade-slide-down [animation-delay:0.8s] relative z-[1] mt-10 opacity-80 no-underline cursor-pointer">
+      <a
+        href="#testimonials"
+        className="animate-fade-slide-down [animation-delay:0.8s] relative z-[1] mt-10 opacity-80 no-underline cursor-pointer"
+      >
         <TestimonialCard t={featured} />
       </a>
     </section>

@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Righteous, Special_Elite, Space_Mono, Playfair_Display } from "next/font/google";
+import {
+  Righteous,
+  Special_Elite,
+  Space_Mono,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 
 const righteous = Righteous({

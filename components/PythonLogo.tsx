@@ -7,11 +7,23 @@ export default function PythonLogo({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="pyLogoA" x1="12.96%" x2="79.64%" y1="12.04%" y2="93.06%">
+        <linearGradient
+          id="pyLogoA"
+          x1="12.96%"
+          x2="79.64%"
+          y1="12.04%"
+          y2="93.06%"
+        >
           <stop offset="0%" stopColor="#387EB8" />
           <stop offset="100%" stopColor="#366994" />
         </linearGradient>
-        <linearGradient id="pyLogoB" x1="19.13%" x2="90.43%" y1="20.58%" y2="88.01%">
+        <linearGradient
+          id="pyLogoB"
+          x1="19.13%"
+          x2="90.43%"
+          y1="20.58%"
+          y2="88.01%"
+        >
           <stop offset="0%" stopColor="#FFC836" />
           <stop offset="100%" stopColor="#FFD43B" />
         </linearGradient>

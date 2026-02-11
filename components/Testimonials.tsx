@@ -14,7 +14,10 @@ export default function Testimonials() {
   const shuffled = shuffle(testimonials);
 
   return (
-    <section id="testimonials" className="py-10 px-8 bg-[linear-gradient(135deg,var(--color-cream)_0%,#F0DEB4_50%,var(--color-cream)_100%)]">
+    <section
+      id="testimonials"
+      className="py-10 px-8 bg-[linear-gradient(135deg,var(--color-cream)_0%,#F0DEB4_50%,var(--color-cream)_100%)]"
+    >
       <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-rust mb-2 text-center">
         Field Reports
       </p>

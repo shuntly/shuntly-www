@@ -21,7 +21,11 @@ const tabs: Tab[] = [
   {
     id: "py-anthropic",
     lang: "python",
-    label: <><PythonLogo className={iconClass} /> Anthropic</>,
+    label: (
+      <>
+        <PythonLogo className={iconClass} /> Anthropic
+      </>
+    ),
     code: `from shuntly import shunt
 from anthropic import Anthropic
 
@@ -34,7 +38,11 @@ resp = client.messages.create(
   {
     id: "py-openai",
     lang: "python",
-    label: <><PythonLogo className={iconClass} /> OpenAI</>,
+    label: (
+      <>
+        <PythonLogo className={iconClass} /> OpenAI
+      </>
+    ),
     code: `from shuntly import shunt
 from openai import OpenAI
 
@@ -47,7 +55,11 @@ resp = client.chat.completions.create(
   {
     id: "py-google",
     lang: "python",
-    label: <><PythonLogo className={iconClass} /> Google</>,
+    label: (
+      <>
+        <PythonLogo className={iconClass} /> Google
+      </>
+    ),
     code: `from shuntly import shunt
 from google import genai
 
@@ -61,7 +73,11 @@ resp = client.models.generate_content(
   {
     id: "ts-anthropic",
     lang: "typescript",
-    label: <><TypeScriptLogo className={iconClass} /> Anthropic</>,
+    label: (
+      <>
+        <TypeScriptLogo className={iconClass} /> Anthropic
+      </>
+    ),
     code: `import { shunt } from 'shuntly';
 import Anthropic from '@anthropic-ai/sdk';
 
@@ -74,7 +90,11 @@ const resp = await client.messages.create({
   {
     id: "ts-openai",
     lang: "typescript",
-    label: <><TypeScriptLogo className={iconClass} /> OpenAI</>,
+    label: (
+      <>
+        <TypeScriptLogo className={iconClass} /> OpenAI
+      </>
+    ),
     code: `import { shunt } from 'shuntly';
 import OpenAI from 'openai';
 
@@ -87,7 +107,11 @@ const resp = await client.chat.completions.create({
   {
     id: "ts-google",
     lang: "typescript",
-    label: <><TypeScriptLogo className={iconClass} /> Google</>,
+    label: (
+      <>
+        <TypeScriptLogo className={iconClass} /> Google
+      </>
+    ),
     code: `import { shunt } from 'shuntly';
 import { GoogleGenAI } from "@google/genai";
 
@@ -101,7 +125,11 @@ const resp = await client.models.generateContent({
   {
     id: "ts-piai",
     lang: "typescript",
-    label: <><TypeScriptLogo className={iconClass} /> pi-ai</>,
+    label: (
+      <>
+        <TypeScriptLogo className={iconClass} /> pi-ai
+      </>
+    ),
     code: `import { shunt } from 'shuntly';
 import { complete, getModel } from "@mariozechner/pi-ai";
 
@@ -120,10 +148,12 @@ const resp = await complete(model, {
 
 const highlightedTabs = tabs.map((tab) => {
   const grammar =
-    tab.lang === "python"
-      ? Prism.languages.python
-      : Prism.languages.typescript;
-  return { id: tab.id, lang: tab.lang, html: Prism.highlight(tab.code, grammar, tab.lang) };
+    tab.lang === "python" ? Prism.languages.python : Prism.languages.typescript;
+  return {
+    id: tab.id,
+    lang: tab.lang,
+    html: Prism.highlight(tab.code, grammar, tab.lang),
+  };
 });
 
 export default function HowItWorks() {
@@ -143,34 +173,38 @@ export default function HowItWorks() {
 
       <div className="max-w-[700px] mx-auto relative z-[1]">
         <div className="flex">
-          {tabs.filter((t) => t.lang === "python").map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-2 cursor-pointer transition-all ${
-                activeTab === tab.id
-                  ? "bg-mustard/90 text-brown"
-                  : "bg-transparent text-mustard hover:bg-mustard/15"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+          {tabs
+            .filter((t) => t.lang === "python")
+            .map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-2 cursor-pointer transition-all ${
+                  activeTab === tab.id
+                    ? "bg-mustard/90 text-brown"
+                    : "bg-transparent text-mustard hover:bg-mustard/15"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
         </div>
         <div className="flex -mt-[2px]">
-          {tabs.filter((t) => t.lang === "typescript").map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
-                activeTab === tab.id
-                  ? "bg-mustard text-brown"
-                  : "bg-transparent text-mustard hover:bg-mustard/15"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+          {tabs
+            .filter((t) => t.lang === "typescript")
+            .map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`code-tab-responsive grow basis-0 font-terminal text-[0.85rem] tracking-[0.05em] py-2 px-4 border-2 border-mustard border-b-0 cursor-pointer transition-all ${
+                  activeTab === tab.id
+                    ? "bg-mustard text-brown"
+                    : "bg-transparent text-mustard hover:bg-mustard/15"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
         </div>
       </div>
 

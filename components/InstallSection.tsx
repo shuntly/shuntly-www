@@ -29,7 +29,10 @@ function InstallCmd({ label, command }: { label: string; command: string }) {
 
 export default function InstallSection() {
   return (
-    <section id="install" className="how-grid-lines relative py-10 px-8 bg-brown text-cream text-center overflow-hidden">
+    <section
+      id="install"
+      className="how-grid-lines relative py-10 px-8 bg-brown text-cream text-center overflow-hidden"
+    >
       <p className="font-terminal text-[0.85rem] tracking-[0.3em] uppercase text-mustard mb-2 relative z-[1]">
         Get Started
       </p>

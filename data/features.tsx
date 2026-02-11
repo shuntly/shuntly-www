@@ -2,7 +2,11 @@ import type { ReactNode } from "react";
 import PythonLogo from "@/components/PythonLogo";
 import TypeScriptLogo from "@/components/TypeScriptLogo";
 
-export const features: { icon: ReactNode; title: string; description: string }[] = [
+export const features: {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}[] = [
   {
     icon: "\uD83E\uDEB6",
     title: "Featherweight",
@@ -35,8 +39,7 @@ export const features: { icon: ReactNode; title: string; description: string }[]
       </span>
     ),
     title: "Python & TypeScript",
-    description:
-      "First-class support for both ecosystems. Same API design.",
+    description: "First-class support for both ecosystems. Same API design.",
   },
   {
     icon: "\uD83E\uDDF1",
