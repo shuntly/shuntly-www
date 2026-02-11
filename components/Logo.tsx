@@ -8,18 +8,18 @@ export default function Logo({
   className?: string;
 }) {
   const height = size;
-  const width = size * (169.99 / 255.91);
+  const width = size * (161.83 / 255.91);
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 0 169.99 255.91"
+      viewBox="0 0 161.83 255.91"
       className={className}
     >
       <path
-        d="M81.01,100.11v48s59.41,59.54,59.41,59.54v32.47h-23.44s.03-24,.03-24l-60-60v-32H1v-24h56s24,0,24,0ZM141.01,180.11l-24-24-.03-55.54h23.44s.6,79.54.6,79.54Z"
+        d="M8.84,116.11l16-16,107.41,107.54v32.47h-23.44s.03-24,.03-24L8.84,116.11ZM132.85,184.11l-24-24-.03-59.54h23.44s.6,83.54.6,83.54Z"
         fill={color}
         stroke={color}
         strokeLinejoin="round"
