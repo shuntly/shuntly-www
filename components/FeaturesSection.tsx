@@ -15,7 +15,7 @@ export default function FeaturesSection() {
             key={f.title}
             className="bg-cream border-2 border-dashed border-tan px-4 py-2 text-center transition-all duration-200 hover:border-solid hover:border-burnt-orange"
           >
-            <div className="text-[2.5rem]">{f.icon}</div>
+            <div className="text-[1.9rem]">{f.icon}</div>
             <h3 className="font-righteous text-[1.1rem] text-rust mb-2">
               {f.title}
             </h3>

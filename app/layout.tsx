@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Righteous, Special_Elite, Space_Mono, Playfair_Display } from "next/font/google";
+import {
+  Righteous,
+  Special_Elite,
+  Space_Mono,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 
 const righteous = Righteous({
@@ -28,11 +33,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Your Agents Have Secrets: Use SHUNTLY",
+  title: "Your Agents Have Secrets: Call Shuntly",
   description:
     "A lightweight wiretap for your LLM API traffic. One line of code, total visibility. Python & TypeScript.",
   openGraph: {
-    title: "Your Agents Have Secrets: Use SHUNTLY",
+    title: "Your Agents Have Secrets: Call Shuntly",
     description:
       "A lightweight wiretap for your LLM API traffic. One line of code, total visibility. Python & TypeScript.",
     url: "https://shuntly.ai",

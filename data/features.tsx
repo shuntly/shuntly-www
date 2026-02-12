@@ -1,4 +1,12 @@
-export const features = [
+import type { ReactNode } from "react";
+import PythonLogo from "@/components/PythonLogo";
+import TypeScriptLogo from "@/components/TypeScriptLogo";
+
+export const features: {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}[] = [
   {
     icon: "\uD83E\uDEB6",
     title: "Featherweight",
@@ -24,10 +32,14 @@ export const features = [
       "Watch traffic flow in real time via named pipes. Pipe to jq, fx, or any tool you like.",
   },
   {
-    icon: "\uD83D\uDC0D\uD83D\uDCD8",
+    icon: (
+      <span className="inline-flex items-center gap-1">
+        <PythonLogo className="w-[0.9em] h-[0.9em]" />
+        <TypeScriptLogo className="w-[0.9em] h-[0.9em]" />
+      </span>
+    ),
     title: "Python & TypeScript",
-    description:
-      "First-class support for both ecosystems. Same API design.",
+    description: "First-class support for both ecosystems. Same API design.",
   },
   {
     icon: "\uD83E\uDDF1",

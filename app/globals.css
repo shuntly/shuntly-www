@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-mustard: #D4A017;
-  --color-burnt-orange: #CC5500;
+  --color-mustard: #d4a017;
+  --color-burnt-orange: #cc5500;
   --color-avocado: #568203;
-  --color-rust: #B7410E;
-  --color-cream: #FFF8E7;
-  --color-brown: #3E2723;
-  --color-tan: #D2B48C;
-  --color-paper: #F5E6C8;
-  --color-teal: #008080;
-  --color-dark: #1A1408;
-  --color-terminal: #0D0D0D;
-  --color-terminal-green: #33FF33;
+  --color-rust: #b7410e;
+  --color-cream: #fff8e7;
+  --color-brown: #3e2723;
+  --color-tan: #d2b48c;
+  --color-paper: #f5e6c8;
+  --color-dark: #1a1408;
+  --color-terminal: #0d0d0d;
+  --color-terminal-green: #d2b48c;
 
   --font-righteous: var(--ff-righteous);
   --font-special-elite: var(--ff-special-elite);
@@ -38,7 +37,7 @@ body {
 
 /* Scanline overlay */
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background: repeating-linear-gradient(
@@ -54,31 +53,60 @@ body::after {
 
 /* Keyframes */
 @keyframes fadeSlideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slowSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes lookAround {
-  0%, 100% { transform: translate(-50%, -50%); }
-  25% { transform: translate(-20%, -50%); }
-  50% { transform: translate(-50%, -50%); }
-  75% { transform: translate(-80%, -50%); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(-20%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  75% {
+    transform: translate(-80%, -50%);
+  }
 }
 
 /* Hero multi-layer background */
 .hero-bg {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(212, 160, 23, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(204, 85, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(212, 160, 23, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 50%,
+      rgba(204, 85, 0, 0.1) 0%,
+      transparent 50%
+    ),
     linear-gradient(180deg, var(--color-cream) 0%, var(--color-paper) 100%);
 }
 
@@ -94,7 +122,7 @@ body::after {
 
 /* CTA button shadow pseudo-element */
 .cta-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 4px;
   left: 4px;
@@ -110,29 +138,9 @@ body::after {
   left: 6px;
 }
 
-/* Problem section cross pattern background */
-.problem-bg {
-  background:
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A017' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-    var(--color-paper);
-}
-
-/* Problem card number watermark */
-.problem-card::before {
-  content: attr(data-number);
-  font-family: var(--font-righteous), cursive;
-  font-size: 4rem;
-  color: var(--color-mustard);
-  opacity: 0.2;
-  position: absolute;
-  top: 0.2rem;
-  right: 1rem;
-  line-height: 1;
-}
-
 /* How-it-works section vertical grid lines */
 .how-grid-lines::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(
@@ -150,7 +158,7 @@ body::after {
 }
 
 .testimonial-card::before {
-  content: '\275D';
+  content: "\275D";
   font-size: 4rem;
   color: var(--color-mustard);
   opacity: 0.3;
@@ -161,33 +169,55 @@ body::after {
   font-family: Georgia, serif;
 }
 
-/* Eye decoration */
-.eye-shape {
-  width: 80px;
-  height: 40px;
-  border: 3px solid var(--color-brown);
-  border-radius: 50%;
-  position: relative;
+/* Prism.js custom theme — retro terminal palette */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #d2b48c;
 }
 
-.eye-shape::after {
-  content: '';
-  width: 18px;
-  height: 18px;
-  background: var(--color-brown);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: lookAround 4s ease-in-out infinite;
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #666;
 }
 
-/* Syntax highlighting for code blocks */
-.syn-comment { color: #666; }
-.syn-keyword { color: #D4A017; }
-.syn-string { color: #FF6B6B; }
-.syn-func { color: #66D9EF; }
+.token.keyword,
+.token.builtin {
+  color: #d4a017;
+}
+
+.token.operator {
+  color: #fff8e7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #568203;
+}
+
+.token.function,
+.token.class-name {
+  color: #cc5500;
+}
+
+.token.number,
+.token.boolean {
+  color: #568203;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.token.import,
+.token.from {
+  color: #d4a017;
+}
+
+.token.plain {
+  color: #d2b48c;
+}
 
 /* Hide scrollbar but keep scroll */
 .hide-scrollbar {
@@ -200,7 +230,13 @@ body::after {
 
 /* Responsive overrides */
 @media (max-width: 600px) {
-  .cta-row-responsive { flex-direction: column; align-items: center; }
+  .cta-row-responsive {
+    flex-direction: column;
+    align-items: center;
+  }
 
-  .code-tab-responsive { padding: 0.5em 1.2em; font-size: 1rem; }
+  .code-tab-responsive {
+    padding: 0.5em 1.2em;
+    font-size: 1rem;
+  }
 }
