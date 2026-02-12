@@ -36,6 +36,7 @@ resp = client.messages.create(
     messages=[{'role': 'user', 'content': 'What is Shuntly?'}],
 )`,
   },
+  //----------------------------------------------------------------------------
   {
     id: "py-openai",
     lang: "python",
@@ -53,6 +54,25 @@ resp = client.chat.completions.create(
     messages=[{'role': 'user', 'content': 'What is Shuntly?'}],
 )`,
   },
+  //----------------------------------------------------------------------------
+  {
+    id: "py-litellm",
+    lang: "python",
+    label: (
+      <>
+        <PythonLogo className={iconClass} /> LiteLLM
+      </>
+    ),
+    code: `from shuntly import shunt
+import litellm
+
+shunt(litellm)
+resp = litellm.completion(
+    model=MODEL,
+    messages=[{'role': 'user', 'content': 'What is Shuntly'}],
+)`,
+  },
+  //----------------------------------------------------------------------------
   {
     id: "py-google",
     lang: "python",
@@ -88,6 +108,7 @@ const resp = await client.messages.create({
   messages: [{ role: "user", content: "What is Shuntly?" }],
 });`,
   },
+  //----------------------------------------------------------------------------
   {
     id: "ts-openai",
     lang: "typescript",
@@ -105,6 +126,7 @@ const resp = await client.chat.completions.create({
   messages: [{ role: "user", content: "What is Shuntly?" }],
 });`,
   },
+  //----------------------------------------------------------------------------
   {
     id: "ts-google",
     lang: "typescript",
@@ -123,6 +145,7 @@ const resp = await client.models.generateContent({
 });
 `,
   },
+  //----------------------------------------------------------------------------
   {
     id: "ts-piai",
     lang: "typescript",
