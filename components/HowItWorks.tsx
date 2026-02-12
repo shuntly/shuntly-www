@@ -229,10 +229,12 @@ export default function HowItWorks() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const [visibleLines, setVisibleLines] = useState(sinkLines.length);
   const intervalRef = useRef<ReturnType<typeof setInterval>>(null);
+  const sinkRef = useRef<HTMLPreElement>(null);
 
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     setVisibleLines(0);
+    sinkRef.current?.scrollTo(0, 0);
     let line = 0;
     intervalRef.current = setInterval(() => {
       line++;
@@ -305,7 +307,10 @@ export default function HowItWorks() {
           JSON
         </div>
 
-        <pre className="bg-terminal/70 border-2 border-tan p-4 h-100 font-terminal text-[0.9rem] leading-[1.7] overflow-x-auto overflow-y-auto text-left grid">
+        <pre
+          ref={sinkRef}
+          className="bg-terminal/70 border-2 border-tan p-4 h-100 font-terminal text-[0.9rem] leading-[1.7] overflow-x-auto overflow-y-auto text-left grid"
+        >
           <code
             className="language-json col-start-1 row-start-1 invisible"
             dangerouslySetInnerHTML={{ __html: sinkLines.join("\n") }}

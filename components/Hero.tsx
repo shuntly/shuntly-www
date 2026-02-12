@@ -25,7 +25,7 @@ export default function Hero() {
       setIdx((prev) => randomIndex(prev));
       setFading(false);
       timeoutRef.current = null;
-    }, 200);
+    }, 120);
   }, []);
 
   return (
