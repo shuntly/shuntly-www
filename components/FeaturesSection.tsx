@@ -19,9 +19,7 @@ export default function FeaturesSection() {
             <h3 className="font-righteous text-[1.1rem] text-rust mb-2">
               {f.title}
             </h3>
-            <p className="text-[0.9rem] leading-relaxed opacity-80">
-              {f.description}
-            </p>
+            <p className="text-[0.9rem] opacity-80">{f.description}</p>
           </div>
         ))}
       </div>
