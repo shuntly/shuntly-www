@@ -22,9 +22,9 @@ export default function Hero() {
       </h1>
 
       <p className="animate-fade-slide-down [animation-delay:0.3s] font-special-elite text-[clamp(1.1rem,2.5vw,1.6rem)] text-rust mt-8 max-w-[600px] leading-relaxed relative z-[1]">
-        Wiretap your LLM traffic.
+        Wiretap your LLM traffic
         <br />
-        Python &amp; TypeScript.
+        Python &amp; TypeScript
       </p>
 
       <div className="cta-row-responsive animate-fade-slide-down [animation-delay:0.6s] flex gap-4 mt-6 flex-wrap justify-center relative z-[1]">
