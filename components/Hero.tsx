@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "./TestimonialCard";
 
@@ -14,7 +14,10 @@ function randomIndex(exclude?: number) {
 }
 
 export default function Hero() {
-  const [idx, setIdx] = useState(() => randomIndex());
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    setIdx(randomIndex());
+  }, []);
   const [fading, setFading] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 

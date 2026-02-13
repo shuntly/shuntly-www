@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "./TestimonialCard";
 
@@ -11,7 +14,10 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 export default function Testimonials() {
-  const shuffled = shuffle(testimonials);
+  const [items, setItems] = useState(testimonials);
+  useEffect(() => {
+    setItems(shuffle(testimonials));
+  }, []);
 
   return (
     <section
@@ -26,7 +32,7 @@ export default function Testimonials() {
       </h2>
 
       <div className="flex gap-8 overflow-x-auto py-6 px-4 snap-x snap-mandatory scroll-smooth">
-        {shuffled.map((t) => (
+        {items.map((t) => (
           <TestimonialCard key={t.name} t={t} />
         ))}
       </div>
