@@ -298,7 +298,7 @@ export default function HowItWorks() {
       </div>
 
       <div className="max-w-[700px] mx-auto relative z-[1] mt-4">
-        <h3 className="font-righteous text-[3.0rem] text-cream mb-2 text-center relative z-[1]">
+        <h3 className="font-righteous text-[clamp(2rem,5vw,3.5rem)] text-cream mb-2 text-center relative z-[1]">
           Traffic Tapped
         </h3>
 
