@@ -12,7 +12,8 @@ import TypeScriptLogo from "./TypeScriptLogo";
 type Tab = {
   id: string;
   lang: "python" | "typescript";
-  label: ReactNode;
+  icon: ReactNode;
+  text: string;
   code: string;
 };
 
@@ -23,11 +24,8 @@ const tabs: Tab[] = [
   {
     id: "py-anthropic",
     lang: "python",
-    label: (
-      <>
-        <PythonLogo className={iconClass} /> Anthropic
-      </>
-    ),
+    icon: <PythonLogo className={iconClass} />,
+    text: "Anthropic",
     code: `from shuntly import shunt
 from anthropic import Anthropic
 
@@ -41,11 +39,8 @@ resp = client.messages.create(
   {
     id: "py-openai",
     lang: "python",
-    label: (
-      <>
-        <PythonLogo className={iconClass} /> OpenAI
-      </>
-    ),
+    icon: <PythonLogo className={iconClass} />,
+    text: "OpenAI",
     code: `from shuntly import shunt
 from openai import OpenAI
 
@@ -59,11 +54,8 @@ resp = client.chat.completions.create(
   {
     id: "py-litellm",
     lang: "python",
-    label: (
-      <>
-        <PythonLogo className={iconClass} /> LiteLLM
-      </>
-    ),
+    icon: <PythonLogo className={iconClass} />,
+    text: "LiteLLM",
     code: `from shuntly import shunt
 import litellm
 
@@ -77,11 +69,8 @@ resp = litellm.completion(
   {
     id: "py-google",
     lang: "python",
-    label: (
-      <>
-        <PythonLogo className={iconClass} /> Google
-      </>
-    ),
+    icon: <PythonLogo className={iconClass} />,
+    text: "Google",
     code: `from shuntly import shunt
 from google import genai
 
@@ -95,11 +84,8 @@ resp = client.models.generate_content(
   {
     id: "ts-anthropic",
     lang: "typescript",
-    label: (
-      <>
-        <TypeScriptLogo className={iconClass} /> Anthropic
-      </>
-    ),
+    icon: <TypeScriptLogo className={iconClass} />,
+    text: "Anthropic",
     code: `import { shunt } from 'shuntly';
 import Anthropic from '@anthropic-ai/sdk';
 
@@ -113,11 +99,8 @@ const resp = await client.messages.create({
   {
     id: "ts-openai",
     lang: "typescript",
-    label: (
-      <>
-        <TypeScriptLogo className={iconClass} /> OpenAI
-      </>
-    ),
+    icon: <TypeScriptLogo className={iconClass} />,
+    text: "OpenAI",
     code: `import { shunt } from 'shuntly';
 import OpenAI from 'openai';
 
@@ -131,11 +114,8 @@ const resp = await client.chat.completions.create({
   {
     id: "ts-google",
     lang: "typescript",
-    label: (
-      <>
-        <TypeScriptLogo className={iconClass} /> Google
-      </>
-    ),
+    icon: <TypeScriptLogo className={iconClass} />,
+    text: "Google",
     code: `import { shunt } from 'shuntly';
 import { GoogleGenAI } from "@google/genai";
 
@@ -150,11 +130,8 @@ const resp = await client.models.generateContent({
   {
     id: "ts-piai",
     lang: "typescript",
-    label: (
-      <>
-        <TypeScriptLogo className={iconClass} /> pi-ai
-      </>
-    ),
+    icon: <TypeScriptLogo className={iconClass} />,
+    text: "pi-ai",
     code: `import { shunt } from 'shuntly';
 import { complete, getModel } from "@mariozechner/pi-ai";
 
@@ -272,11 +249,14 @@ export default function HowItWorks() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`code-tab-responsive grow basis-[calc(50%-1px)] sm:basis-0 font-semibold text-sm tracking-[0.05em] py-2 px-4 cursor-pointer transition-all ${
                     activeTab === tab.id
-                      ? "bg-mustard text-brown"
+                      ? "bg-mustard/90 text-brown"
                       : "bg-mustard/20 text-mustard hover:bg-mustard/40"
                   }`}
                 >
-                  {tab.label}
+                  <span className="grid grid-cols-[1.4em_1fr] items-center gap-2 text-left">
+                    {tab.icon}
+                    <span>{tab.text}</span>
+                  </span>
                 </button>
               ))}
           </div>
@@ -302,9 +282,11 @@ export default function HowItWorks() {
           Traffic Tapped
         </h3>
 
-        <div className="flex items-center text-[0.9rem] tracking-[0.1em] text-tan mb-4 mx-20">
-          For each response, the selected Sink (or default stderr stream) writes
-          JSON
+        <div className="flex items-center text-[0.9rem] text-tan opacity-80 mb-4 mx-20">
+          <p>
+            For each response, the selected Sink (or default stderr stream)
+            writes JSON
+          </p>
         </div>
 
         <pre
