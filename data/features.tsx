@@ -17,7 +17,7 @@ export const features: {
     icon: "\uD83D\uDD0C",
     title: "Pluggable Sinks",
     description:
-      "Stream captured traffic to files, named pipes, stdout, or your own custom sink.",
+      "Stream captured traffic to files, rotating log directories, named pipes, stdout, or your own custom sink.",
   },
   {
     icon: "\uD83C\uDFAD",

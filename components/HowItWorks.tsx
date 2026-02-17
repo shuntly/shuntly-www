@@ -284,8 +284,8 @@ export default function HowItWorks() {
 
         <div className="flex items-center text-[0.9rem] text-tan opacity-80 mb-4 mx-20">
           <p>
-            For each response, the selected Sink (or default stderr stream)
-            writes JSON
+            For each response, the selected Sink (stderr, file, rotating log,
+            named pipe, or custom) writes JSON
           </p>
         </div>
 
