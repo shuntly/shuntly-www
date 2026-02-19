@@ -16,7 +16,8 @@ function randomIndex(exclude?: number) {
 export default function Hero() {
   const [idx, setIdx] = useState(0);
   useEffect(() => {
-    setIdx(randomIndex());
+    const t = setTimeout(() => setIdx(randomIndex()), 0);
+    return () => clearTimeout(t);
   }, []);
   const [fading, setFading] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);

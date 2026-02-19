@@ -16,7 +16,8 @@ function shuffle<T>(arr: T[]): T[] {
 export default function Testimonials() {
   const [items, setItems] = useState(testimonials);
   useEffect(() => {
-    setItems(shuffle(testimonials));
+    const t = setTimeout(() => setItems(shuffle(testimonials)), 0);
+    return () => clearTimeout(t);
   }, []);
 
   return (
