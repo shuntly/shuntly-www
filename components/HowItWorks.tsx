@@ -29,7 +29,7 @@ const tabs: Tab[] = [
     code: `from shuntly import shunt
 from anthropic import Anthropic
 
-client = shunt(Anthropic(api_key=API_KEY)) # Call shuntly()
+client = shunt(Anthropic(api_key=API_KEY)) # Call shuntly
 resp = client.messages.create(
     model=MODEL,
     messages=[{'role': 'user', 'content': 'What is observability?'}],
@@ -44,7 +44,7 @@ resp = client.messages.create(
     code: `from shuntly import shunt
 from openai import OpenAI
 
-client = shunt(OpenAI(api_key=_API_KEY)) # Call shuntly()
+client = shunt(OpenAI(api_key=_API_KEY)) # Call shuntly
 resp = client.chat.completions.create(
     model=MODEL,
     messages=[{'role': 'user', 'content': 'What is observability?'}],
@@ -74,7 +74,7 @@ resp = litellm.completion(
     code: `from shuntly import shunt
 from google import genai
 
-client = shunt(genai.Client(api_key=API_KEY)) # Call shuntly()
+client = shunt(genai.Client(api_key=API_KEY)) # Call shuntly
 resp = client.models.generate_content(
     model=MODEL,
     contents='What is observability?',
@@ -89,7 +89,7 @@ resp = client.models.generate_content(
     code: `from shuntly import shunt
 import ollama
 
-client = shunt(ollama.Client(host="https://ollama.com")) # Call shuntly()
+client = shunt(ollama.Client(host="https://ollama.com")) # Call shuntly
 resp = client.chat(
     model=MODEL,
     messages=[{'role': 'user', 'content': 'What is observability?'}],
@@ -104,7 +104,7 @@ resp = client.chat(
     code: `from shuntly import shunt
 import any_llm
 
-client = shunt(any_llm) # Call shuntly()
+client = shunt(any_llm) # Call shuntly
 resp = client.completion(
     model=MODEL,
     provider='openai',
@@ -120,7 +120,7 @@ resp = client.completion(
     code: `import { shunt } from 'shuntly';
 import Anthropic from '@anthropic-ai/sdk';
 
-const client = shunt(new Anthropic({ apiKey: API_KEY })); // Call shuntly()
+const client = shunt(new Anthropic({ apiKey: API_KEY })); // Call shuntly
 const resp = await client.messages.create({
   model: MODEL,
   messages: [{ role: "user", content: "What is observability?" }],
@@ -135,7 +135,7 @@ const resp = await client.messages.create({
     code: `import { shunt } from 'shuntly';
 import OpenAI from 'openai';
 
-const client = shunt(new OpenAI({ apiKey: API_KEY })); // Call shuntly()
+const client = shunt(new OpenAI({ apiKey: API_KEY })); // Call shuntly
 const resp = await client.chat.completions.create({
   model: MODEL,
   messages: [{ role: "user", content: "What is observability?" }],
@@ -150,7 +150,7 @@ const resp = await client.chat.completions.create({
     code: `import { shunt } from 'shuntly';
 import { GoogleGenAI } from "@google/genai";
 
-const client = shunt(new GoogleGenAI({ apiKey: API_KEY })); // Call shuntly()
+const client = shunt(new GoogleGenAI({ apiKey: API_KEY })); // Call shuntly
 const resp = await client.models.generateContent({
   model: MODEL,
   contents: "What is observability?",
@@ -166,7 +166,7 @@ const resp = await client.models.generateContent({
     code: `import { shunt } from 'shuntly';
 import { Ollama } from 'ollama';
 
-const client = shunt(new Ollama({ host: "https://ollama.com" })); // Call shuntly()
+const client = shunt(new Ollama({ host: "https://ollama.com" })); // Call shuntly
 const resp = await client.chat({
   model: MODEL,
   messages: [{ role: "user", content: "What is observability?" }],
@@ -181,7 +181,7 @@ const resp = await client.chat({
     code: `import { shunt } from 'shuntly';
 import { complete, getModel } from "@mariozechner/pi-ai";
 
-const complete = shunt(complete); // Call shuntly()
+const complete = shunt(complete); // Call shuntly
 const model = getModel("anthropic", "claude-haiku-4-5-20251001");
 const resp = await complete(model, {
   messages: [
