@@ -80,6 +80,37 @@ resp = client.models.generate_content(
     contents='What is observability?',
 )`,
   },
+  //----------------------------------------------------------------------------
+  {
+    id: "py-ollama",
+    lang: "python",
+    icon: <PythonLogo className={iconClass} />,
+    text: "Ollama",
+    code: `from shuntly import shunt
+import ollama
+
+client = shunt(ollama.Client(host="https://ollama.com")) # Call shuntly()
+resp = client.chat(
+    model=MODEL,
+    messages=[{'role': 'user', 'content': 'What is observability?'}],
+)`,
+  },
+  //----------------------------------------------------------------------------
+  {
+    id: "py-anyllm",
+    lang: "python",
+    icon: <PythonLogo className={iconClass} />,
+    text: "any-llm",
+    code: `from shuntly import shunt
+import any_llm
+
+client = shunt(any_llm) # Call shuntly()
+resp = client.completion(
+    model=MODEL,
+    provider='openai',
+    messages=[{'role': 'user', 'content': 'What is observability?'}],
+)`,
+  },
   // TS examples
   {
     id: "ts-anthropic",
@@ -125,6 +156,21 @@ const resp = await client.models.generateContent({
   contents: "What is observability?",
 });
 `,
+  },
+  //----------------------------------------------------------------------------
+  {
+    id: "ts-ollama",
+    lang: "typescript",
+    icon: <TypeScriptLogo className={iconClass} />,
+    text: "Ollama",
+    code: `import { shunt } from 'shuntly';
+import { Ollama } from 'ollama';
+
+const client = shunt(new Ollama({ host: "https://ollama.com" })); // Call shuntly()
+const resp = await client.chat({
+  model: MODEL,
+  messages: [{ role: "user", content: "What is observability?" }],
+});`,
   },
   //----------------------------------------------------------------------------
   {
